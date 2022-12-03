@@ -62,6 +62,7 @@ namespace jQueryLearnings.API.Controllers
             }
         }
 
+        [HttpPost]
         public IActionResult Post(Product product)
         {
             try

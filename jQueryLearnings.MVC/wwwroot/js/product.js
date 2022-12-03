@@ -1,11 +1,11 @@
 ﻿function getFromInput() {
     return {
-        "productID": getValue("productID"),
+        "productID": parseInt(getValue("productID")),
         "name": getValue("name"),
         "productNumber": getValue("productNumber"),
         "color": getValue("color"),
-        "standardCost": getValue("standardCost"),
-        "listPrice": getValue("listPrice"),
+        "standardCost": parseFloat(getValue("standardCost")),
+        "listPrice": parseFloat(getValue("listPrice")),
         "sellStartDate": new Date(getValue("sellStartDate"))
     };
 }
