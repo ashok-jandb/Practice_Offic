@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Retrieve Data Using jQuery And Promises";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <button onclick="get();">Retrieve data using jQuery andPromises</button>
+    <div class="row">
+        <label id="message" class="infoMessage"></label>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/MyjQueryLibraries.js"></script>
+    <script src="~/js/ajax-common.js"></script>
+}
