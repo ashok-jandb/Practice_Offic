@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Update Product Using jQuery and Promises";
+}
+<h1>@ViewData["Title"]</h1>
+<p>Bring up console window</p>
+<form>
+    <div class="row">
+        <label for="productID">Product ID</label>
+        <input id="productID" name="productID" type="text" value="999" />
+    </div>
+    <div class="row">
+        <label for="name">Product Name</label>
+        <input id="name" name="name" type="text" value="Road-750 Black, 52" />
+    </div>
+    <div class="row">
+        <label for="productNumber">Product Number</label>
+        <input id="productNumber" name="productNumber" type="text" value="BK-R19B-52" />
+    </div>
+    <div class="row">
+        <label for="color">Color</label>
+        <input id="color" name="color" type="text" value="Black updated" />
+    </div>
+    <div class="row">
+        <label for="standardCost">Cost</label>
+        <input id="standardCost" name="standardCost" type="number" value="343.6496" />
+    </div>
+    <div class="row">
+        <label for="listPrice">Price</label>
+        <input id="listPrice" name="listPrice" type="number" value="539.99" />
+    </div>
+    <div class="row">
+        <label for="sellStartDate">Sell Start Date</label>
+        <input id="sellStartDate" name="sellStartDate" type="text" value="07/01/2022" />
+    </div>
+    <div class="row">
+        <label id="message" class="infoMessage"></label>
+    </div>
+    <div class="row">
+        <label id="error" class="errorMessage"></label>
+    </div>
+    <div class="row">
+        <button type="button" onclick="updateProduct();">Update Product</button>
+    </div>
+</form>
+@section Scripts {
+    <script src="~/js/ajax-common.js"></script>
+    <script src="~/js/product.js"></script>
+    <script src="~/js/UpdateProductUsingJQueryAndPromises.js"></script>
+}

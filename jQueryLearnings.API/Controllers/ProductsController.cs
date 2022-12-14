@@ -88,12 +88,14 @@ namespace jQueryLearnings.API.Controllers
             }
         }
 
-        public IActionResult Put(int id, Product productToUpdate)
+        [HttpPut]
+        public IActionResult Put(Product productToUpdate)
         {
             try
             {
                 if(productToUpdate != null)
                 {
+                    var id = productToUpdate.ProductID;
                     var existingProduct = _context.Products.Find(id);
                     if(existingProduct != null)
                     {

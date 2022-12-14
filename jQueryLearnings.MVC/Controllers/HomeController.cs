@@ -39,6 +39,16 @@ namespace jQueryLearnings.MVC.Controllers
             return View();
         }
 
+        public IActionResult UpdateProductUsingJQueryAndPromises()
+        {
+            return View();
+        }
+
+        public IActionResult DeleteProductUsingJQueryAndPromises()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

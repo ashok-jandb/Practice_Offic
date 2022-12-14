@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Delete Product Using jQuery and Promises";
+}
+<h1>@ViewData["Title"]</h1>
+<div id="error"></div>
+Enter product id to delete: <input type="text" id="productID" value="999" />
+<button onclick="deleteProduct()">Delete Product</button>
+@section Scripts {
+    <script src="~/js/ajax-common.js"></script>
+    <script src="~/js/DeleteProductUsingJQueryAndPromises.js"></script>
+}
