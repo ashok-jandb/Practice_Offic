@@ -5,9 +5,16 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <input type="text" id="txtName" />
+    <input type="button" id="btnGet" value="Get Current Time" />
 </div>
 <div class="row">@Html.ActionLink("Retrieve data using jQuery and Promises", "RetrieveDataUsingJQueryAndPromises", "Home")</div>
 <div class="row">@Html.ActionLink("Get a Product Details using jQuery and Promises", "GetAProductDetailsUsingJQueryAndPromises", "Home")</div>
 <div class="row">@Html.ActionLink("Insert Product Using jQuery and Promises", "InsertProductUsingJQueryAndPromises", "Home")</div>
 <div class="row">@Html.ActionLink("Update Product Using jQuery and Promises", "UpdateProductUsingJQueryAndPromises", "Home")</div>
 <div class="row">@Html.ActionLink("Delete Product Using jQuery and Promises", "DeleteProductUsingjQueryAndPromises", "Home")</div>
+<div class="row">@Html.ActionLink("Show Employee Resullts in tabular format", "EmployeeResultsInTable", "Home")</div>
+<div class="row">@Html.ActionLink("Correct Usage of try...catch block in Ajax", "CorrectUsageOfTryCatchInAjax", "Home")</div>
+@section Scripts {
+    <script src="~/js/mudassir_talent_scripts.js"></script>
+}

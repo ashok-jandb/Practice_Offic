@@ -1,12 +1,10 @@
 ﻿function deleteProduct() {
-    const URL = "https://localhost:44393/api/products";
-    let productId = getProductIDFromInput();
+    const URL = "/api/products";
+    let productId = getValue("productID")
     $.ajax({
-        url: URL,
+        url: URL + "/" + productId,
         type: "DELETE",
-        contentType: "application/json",
-        data: JSON.stringify(productId),
-        cache: false
+        dataType: "json",
     })
         .done(function (data) {
             displayMessage('Product Deleted');
@@ -21,7 +19,5 @@
 }
 
 function getProductIDFromInput() {
-    return {
-        "productID": parseInt(getValue("productID"))
-    };
+    return parseInt(getValue("productID"))
 }

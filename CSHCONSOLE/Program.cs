@@ -18,7 +18,8 @@ namespace CSHCONSOLE
             //new SplitByTilde().Run();
             //new TestLeadingAndTrailingSpaces().Run();
             //new RegExDemo().Run();
-            new StripHTMLContent().GetStrippedContent();
+            //new StripHTMLContent().GetStrippedContent();
+            new TestStringReplace().Run();
             Console.ReadKey();
         }
     }

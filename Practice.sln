@@ -15,9 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KendoMVC", "KendoMVC\KendoM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KendoExampleInMVC", "KendoExampleInMVC\KendoExampleInMVC.csproj", "{8DD3B048-6DD6-468F-A4FA-FCEEDC4665E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jQueryLearnings.API", "jQueryLearnings.API\jQueryLearnings.API.csproj", "{BAAED09D-F89F-4AE6-8768-CD1B2D80781C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jQueryLearnings.API", "jQueryLearnings.API\jQueryLearnings.API.csproj", "{BAAED09D-F89F-4AE6-8768-CD1B2D80781C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jQueryLearnings.MVC", "jQueryLearnings.MVC\jQueryLearnings.MVC.csproj", "{A11576A0-A597-4CE7-A65F-9280CC3A0097}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jQueryLearnings.MVC", "jQueryLearnings.MVC\jQueryLearnings.MVC.csproj", "{A11576A0-A597-4CE7-A65F-9280CC3A0097}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3C3C4D2-E115-49B2-BBE3-5879ADE6FECF}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

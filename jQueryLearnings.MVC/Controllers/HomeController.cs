@@ -23,6 +23,21 @@ namespace jQueryLearnings.MVC.Controllers
             return View();
         }
 
+        public IActionResult CorrectUsageOfTryCatchInAjax()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult AjaxMethod(string name)
+        {
+            var person = new PersonModel
+            {
+                Name = name,
+                DateTime = DateTime.Now.ToString()
+            };
+            return Json(person);
+        }
 
         public IActionResult RetrieveDataUsingJQueryAndPromises()
         {
@@ -47,6 +62,26 @@ namespace jQueryLearnings.MVC.Controllers
         public IActionResult DeleteProductUsingJQueryAndPromises()
         {
             return View();
+        }
+
+        [HttpGet]
+        public JsonResult EmployeeResultsInTable()
+        {
+            return Json(Employees);
+        }
+
+        public List<Employee> Employees
+        {
+            get
+            {
+                return new List<Employee>
+                {
+                    new Employee { EmpId = 1001, EmpName = "Employee1", Salary = 100000, IsPermanent = true },
+                    new Employee { EmpId = 1002, EmpName = "Employee2", Salary = 100001, IsPermanent = false },
+                    new Employee { EmpId = 1003, EmpName = "Employee3", Salary = 100002, IsPermanent = true },
+                    new Employee { EmpId = 1004, EmpName = "Employee4", Salary = 100003, IsPermanent = false }
+                };
+            }
         }
 
         public IActionResult Privacy()

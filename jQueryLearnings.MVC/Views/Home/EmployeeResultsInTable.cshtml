@@ -1,0 +1,73 @@
+﻿@model IEnumerable<jQueryLearnings.MVC.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee Results In Tabular format";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form>
+    <button onclick="ShowEmployeeDetails();">Show Employee Details</button>
+    <div class="col-lg-6">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Is Permanent?</th>
+                </tr>
+            </thead>
+            <tbody id="emp_details">
+            </tbody>
+        </table>
+    </div>
+</form>
+<script src="~/js/employee_details_scripts.js"></script>
+<div>
+    Generted code commented
+    @*<p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmpId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmpName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Salary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsPermanent)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmpId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmpName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsPermanent)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>*@
+</div>

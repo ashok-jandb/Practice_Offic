@@ -55,6 +55,7 @@
     <Compile Include="StripHTMLContent.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TestLeadingAndTrailingSpaces.cs" />
+    <Compile Include="TestStringReplace.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

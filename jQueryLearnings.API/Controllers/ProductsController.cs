@@ -26,6 +26,7 @@ namespace jQueryLearnings.API.Controllers
             try
             {
                 var products = _context.Products.OrderBy(x => x.Name).ToList();
+                throw new Exception("Terrible error occurred");
                 if (products == null)
                 {
                     return StatusCode(StatusCodes.Status404NotFound, products);

@@ -14,7 +14,3 @@ function get() {
     });
 }
 /*End: Get Products - Retrieve data using jQuery and promises*/
-
-/*Begin: Get a Product Details Using jQuery and Promises */
-    
-/*End: Get a Product Details Using jQuery and Promises */
