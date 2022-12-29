@@ -1,14 +1,19 @@
 ﻿function ShowEmployeeDetails() {
     $.ajax({
-        url: '@Url.Action("Home", "EmployeeResultsInTable")',
-        type: 'GET',
+        url: '/Home/EmployeeResults',
+        type: 'POST',
         dataType: 'json'
     })
         .done(function (data) {
-            $.each(data, function (key, value) {
-                $('#emp_details').append('<tr><td>' + value + '</td><td>' + value + '</td><td>' + value + '</td><td>' + value +'</td></tr>');
+            alert(data);
+            $(data).each(function () {
+                $('#emp_details').append('<tr><td>'+ this.empId +'</td><td>'+ this.empName +'</td><td>' + this.salary + '</td><td>'+ this.isPermanent +'</td></tr>');
             });
         })
-        .fail()
-        .always();
+        .fail(function (error) {
+            handleAjaxError(error);
+        })
+        .always(function () {
+            console.log('In the always method');
+        });
 }

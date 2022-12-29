@@ -14,5 +14,7 @@ namespace jQueryLearnings.API.Models
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<ProductModel> ProductModels { get; set; }
     }
 }

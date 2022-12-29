@@ -26,7 +26,7 @@ namespace jQueryLearnings.API.Controllers
             try
             {
                 var products = _context.Products.OrderBy(x => x.Name).ToList();
-                throw new Exception("Terrible error occurred");
+                /*throw new Exception("Terrible error occurred");*/
                 if (products == null)
                 {
                     return StatusCode(StatusCodes.Status404NotFound, products);
@@ -42,7 +42,7 @@ namespace jQueryLearnings.API.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public IActionResult Get(int id)
         {
             try
@@ -68,7 +68,7 @@ namespace jQueryLearnings.API.Controllers
         {
             try
             {
-                if(product != null)
+                if (product != null)
                 {
                     product.ProductCategoryID = 18;
                     product.ProductModelID = 6;
@@ -88,17 +88,16 @@ namespace jQueryLearnings.API.Controllers
                 return HandleException(ex, "Exception occurred while trying to insert Product detailss");
             }
         }
-
         [HttpPut]
         public IActionResult Put(Product productToUpdate)
         {
             try
             {
-                if(productToUpdate != null)
+                if (productToUpdate != null)
                 {
                     var id = productToUpdate.ProductID;
                     var existingProduct = _context.Products.Find(id);
-                    if(existingProduct != null)
+                    if (existingProduct != null)
                     {
                         existingProduct.Name = productToUpdate.Name;
                         existingProduct.ProductNumber = productToUpdate.ProductNumber;
@@ -137,7 +136,7 @@ namespace jQueryLearnings.API.Controllers
             try
             {
                 var product = _context.Products.Find(id);
-                if(product == null)
+                if (product == null)
                 {
                     return StatusCode(StatusCodes.Status404NotFound, $"No product found with id: {id}");
                 }
@@ -148,6 +147,55 @@ namespace jQueryLearnings.API.Controllers
             catch (Exception ex)
             {
                 return HandleException(ex, $"Exception occurred while trying to delete the product with id: {id}");
+            }
+        }
+
+        [HttpGet("tableParam/{tableParam}")]
+        public IActionResult Get(string tableParam)
+        {
+            try
+            {
+                if (tableParam.Equals("products"))
+                {
+                    var products = _context.Products.OrderBy(x => x.Name).ToList();
+                    if (products.Count == 0)
+                    {
+                        return StatusCode(StatusCodes.Status404NotFound, "No products found");
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status200OK, products);
+                    }
+                }
+                else if (tableParam.Equals("productCategories"))
+                {
+                    var productCategories = _context.ProductCategories.OrderBy(x => x.Name).ToList();
+                    if (productCategories.Count == 0)
+                    {
+                        return StatusCode(StatusCodes.Status404NotFound, productCategories);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status200OK, productCategories);
+                    }
+                }
+                else if (tableParam.Equals("productModels"))
+                {
+                    var productModels = _context.ProductModels.OrderBy(x => x.Name).ToList();
+                    if (productModels.Count == 0)
+                    {
+                        return StatusCode(StatusCodes.Status404NotFound, productModels);
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status200OK, productModels);
+                    }
+                }
+                else throw new Exception("Invalid value passed as a parameter");
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex, "Exception occurred while retrieving details");
             }
         }
     }

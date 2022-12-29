@@ -65,9 +65,52 @@ namespace jQueryLearnings.MVC.Controllers
         }
 
         [HttpGet]
-        public JsonResult EmployeeResultsInTable()
+        public IActionResult EmployeeResultsInTable()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult EmployeeResults()
         {
             return Json(Employees);
+        }
+
+        [HttpGet]
+        public IActionResult DeferredObjectDemo()
+        {
+            return View();
+        }
+
+        public IActionResult DeferredObjectDemo2()
+        {
+            return View();
+        }
+
+        public IActionResult CachingWithDeferredObject()
+        {
+            return View();
+        }
+
+        public IActionResult WhichButtonPressed()
+        {
+            return View();
+        }
+
+        public IActionResult GetAndPostDataUsingAjax()
+        {
+            return View();
+        }
+
+        public JsonResult GetStudent()
+        {
+            var student = new Student()
+            {
+                Id = 1,
+                Email = "email@gmail.com",
+                Name = "Ashok Kumar"
+            };
+            return Json(student);
         }
 
         public List<Employee> Employees

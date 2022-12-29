@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -31,6 +33,7 @@ namespace jQueryLearnings.API
             {
                 options.AddPolicy("CorsPolicy",
                     builder => builder
+                        .WithOrigins("https://localhost:44335", "https://localhost:44393")
                         .AllowAnyMethod()
                         .AllowCredentials()
                         .SetIsOriginAllowed((host) => true)
@@ -47,6 +50,13 @@ namespace jQueryLearnings.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseFileServer(new FileServerOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "StaticContent")),
+                RequestPath = "/StaticContent",
+                EnableDefaultFiles = true
+            });
 
             app.UseHttpsRedirection();
 

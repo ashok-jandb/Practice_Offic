@@ -3,7 +3,8 @@
 }
 <h1>@ViewData["Title"]</h1>
 <p>Bring up console window</p>
-<form>
+<div class="row" id="header"></div>
+<form onload="loadHeaderHtml();">
     <div class="row">
         <label for="productID">Product ID</label>
         <input id="productID" name="productID" type="text" value="0" />
@@ -42,6 +43,7 @@
         @*<button type="button" onclick="get();">Get Products</button>
             <button type="button" onclick="getProduct();">Get a Product</button>*@
         <button type="button" onclick="insertProduct();">Insert Product</button>
+        <button type="button" onclick="loadHeaderHtml();">Load Header HTML</button>
         @*<button type="button" onclick="updateProduct();">Update Product</button>
             <button type="button" onclick="deleteProduct();">Delete Product</button>*@
     </div>
